@@ -101,19 +101,5 @@ def main():
 # FindDup("AGE")
 
 
-#Question 3:
-
-# def SpcialEntry(Name):
-#     cursor = connection.execute(f"SELECT * from Company where {Name}")
-#     if Name == cursor:
-#         Check =input(f"The name {Name} is already in the company table\nPress 'Y' to update the new entry:\nOtherwise press anything else:\n")
-#         if Check == "Y":
-#             connection.execute(f"UPDATE Company SET AGE = {Age}, ADDRESS = '{Address}', '{Salary}' WHERE NAME = '{Name}'")
-#         else:
-#             None
-#     else:
-#         None
-
-
 if __name__ == '__main__':
     main()
