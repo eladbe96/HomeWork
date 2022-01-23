@@ -86,19 +86,19 @@ def main():
 
 #Question 2:
 
-# def FindDup(Column):
-#     cursor = connection.execute(f"SELECT * from Company where {Column} = (SELECT {Column} from Company GROUP by {Column} HAVING count ({Column}) > 1)")
-#     print("The following entries found as duplicates under the column:")
-#     for i in cursor:
-#         print (i)
-#     To_Keep = int(input("Please provide the entry's ID that you would like to keep:\n"))
-#     # cursor_2 = connection.execute(f"delete FROM Company where ID != {To_Keep} AND (SELECT {Column} from Company GROUP by {Column} HAVING count ({Column}) > 1)")
-#     cursor = connection.execute(f"SELECT * from Company where {Column} = (SELECT {Column} from Company GROUP by {Column} HAVING count ({Column}) > 1)")
-#     for x in cursor:
-#         if x[0] != To_Keep:
-#             cursor_2 = connection.execute(f"delete from Company where ID = {x[0]}")
-#     connection.commit()
-# FindDup("AGE")
+def FindDup(Column):
+    cursor = connection.execute(f"SELECT * from Company where {Column} = (SELECT {Column} from Company GROUP by {Column} HAVING count ({Column}) > 1)")
+    print("The following entries found as duplicates under the column:")
+    for i in cursor:
+        print (i)
+    To_Keep = int(input("Please provide the entry's ID that you would like to keep:\n"))
+    # cursor_2 = connection.execute(f"delete FROM Company where ID != {To_Keep} AND (SELECT {Column} from Company GROUP by {Column} HAVING count ({Column}) > 1)")
+    cursor = connection.execute(f"SELECT * from Company where {Column} = (SELECT {Column} from Company GROUP by {Column} HAVING count ({Column}) > 1)")
+    for x in cursor:
+        if x[0] != To_Keep:
+            cursor_2 = connection.execute(f"delete from Company where ID = {x[0]}")
+    connection.commit()
+FindDup("AGE")
 
 
 if __name__ == '__main__':
