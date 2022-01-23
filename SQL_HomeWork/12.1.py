@@ -4,6 +4,8 @@ import random
 from collections import Counter
 connection = sqlite3.connect(r'C:\Users\user\PycharmProjects\DevOps\SQL\TestDB.db')
 
+#Question 1 & 3:
+
 def SpcialEntry(Name,Age,Address,Salary):
     cursor = connection.execute(f"SELECT * from Company where NAME = '{Name}'")
     for i in cursor:
@@ -20,7 +22,6 @@ def SpcialEntry(Name,Age,Address,Salary):
         else:
             return False
 
-#Question 1:
 
 def printData(ID):
     cursor = connection.execute(f"SELECT * FROM COMPANY WHERE ID = {ID}")
